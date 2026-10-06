@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Job Application Tracker</h1>
+    <div id="summary" class="summary"></div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2 id="formTitle">Add Application</h2>
+      <form id="appForm" novalidate>
+        <input type="hidden" id="editId">
+        <div class="field">
+          <label for="company">Company</label>
+          <input type="text" id="company" placeholder="e.g. ABC">
+        </div>
+        <div class="field">
+          <label for="role">Role</label>
+          <input type="text" id="role" placeholder="e.g. Software Engineer">
+        </div>
+        <div class="field">
+          <label for="date">Date applied</label>
+          <input type="date" id="date">
+        </div>
+        <div class="field">
+          <label for="status">Status</label>
+          <select id="status"></select>
+        </div>
+        <div class="field">
+          <label for="notes">Notes</label>
+          <textarea id="notes" rows="2" placeholder="Optional"></textarea>
+        </div>
+        <p id="error" class="error"></p>
+        <div class="actions">
+          <button type="submit" id="saveBtn">Save</button>
+          <button type="button" id="cancelBtn" class="secondary" hidden>Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="toolbar">
+      <input type="search" id="search" placeholder="Search company or role">
+      <select id="filterStatus"></select>
+    </section>
+
+    <section id="board" class="board"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
